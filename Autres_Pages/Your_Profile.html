@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="../style.css" />
 		<title>N-Immo</title>
 		<!-- Ceci sera la page principale du site N-Immo --> 
 	</head>
@@ -11,25 +12,99 @@
 			<h1> Tell us what <strong>YOU</strong> need </h1>
 		</div>
 		<div>
-			<p><a href="#parametres_obligatoires" title="Paramètres à renseigner obligatoirement"> A renseigner </a> <br />
+			<p id="main_link"><a href="#parametres_obligatoires" title="Paramètres à renseigner obligatoirement"> A renseigner </a> <br />
 			<a href="#parametres_non_obligatoires" title="A renseigner si besoin"> Types de rendement </a></p>
 		</div>
 		<div>
-			<h2 id="parametres_obligatoires">Renseignez</h2>
-			<ol>
-				<li> Confirme ton budget total </li>
-				<li> Effort de trésorerie max </li>
-			</ol>
+			<table>
+				<tr>
+					<th> Type rendement </th>
+					<th> Valeur attendu </th>
+					<th> Variable </th>
+				</tr>
+				<tr>
+					<td> Rendement brut </td>
+					<td> 
+						<form method="post" action="traitement_rendement.php">
+							<p> 
+								<label for="rendement">Votre rendement</label>
+								<input type="number" name="rendement brut" id="rendement" maxelength="5" placeholder="10.00" min="0" max="100"/> 
+							</p>
+							<p> 
+								<label for="rendement">Votre rendement</label>
+								<input type="range" step="0.1" id="rendement" maxelength="5" placeholder="10.00" min="0" max="100"/> 
+							</p>
+						</form>
+					</td>
+					<td> % </td>
+				</tr>
+				<tr>
+					<td> Rendement net </td>
+					<td> -- </td>
+					<td> % </td>
+				</tr>
+				<tr>
+					<td> TRI </td>
+					<td> -- </td>
+					<td> % </td>
+				</tr>
+			</table>
+			<div id="infos_perso">
+			<form method="post" action="traitement_perso.php">
+				<p> 
+					<label for="first_name">Nom</label>
+					<input type="text" name="first_name" id="first_name" placeholder="Serge"/> 
+				</p>
+				<p> 
+					<label for="last_name">Nom</label>
+					<input type="text" name="last_name" id="last_name" placeholder="Dupont"/> 
+				</p>
+				<p> 
+					<label for="date">Date à partir de laquelle vous souhaitez investir</label>
+					<input type="date" name="date" id="date"/> 
+				</p>
+				<p>
+					<label for="commentaire"> Un commentaire ?</label>
+					<textarea rwos="5" cols="10"></textarea id="commentaire">
+				</p>
+				<p>
+					<label for="email"> Votre mail : </label>
+					<input type="email" id="email"/> 
+				</p>
+				<p>
+					<label for="tel"> Votre telephone : </label>
+					<input type="tel" id="tel"/> 
+				</p>
+
+				<input type="submit" value="Envoyer"/>
+			</form>
+			</div>
+			<p>
+				<input type="checkbox" checked/> 
+			</p>
+			<p>
+				Sur quel horizon de temps investirez vous?<br />
+				<input type="radio" name="horizon" value="asap" id="asap" /> 
+				<label for="asap">ASAP</label><br />
+				<input type="radio" name="horizon" value="6_m" id="asap" /> 
+				<label for="6_m">Dans les 6 mois</label><br />
+				<input type="radio" name="horizon" value="12_m" id="asap" /> 
+				<label for="12_m">Dans les 12 mois</label><br />
+				<input type="radio" name="horizon" value=">1_y" id="asap" /> 
+				<label for=">1_y">Je ne sais pas</label><br />
+			</p>
+			<p>
+				<label for="ville">Dans quelle ville voulez vous investir ?</label><br />
+				<select name="ville", id="ville">
+					<option value="Paris" selected>Paris, PANAME LA MAGNIFIQUE</option>
+					<option value="Saint_Ouen">Saint_Ouen</option>
+					<option value="Lille">Lille</option>
+					<option value="Aubervilliers">Aubervilliers</option>
+				</select>
+			</p>
 		</div>
-		<div>
-			<h2 id="parametres_non_obligatoires">Renseignez si besoin</h2>
-			<ul>
-				<li> Rendement brut </li>
-				<li> Rendement net </li>
-				<li> TRI </li>
-			</ul>
-		</div>
-		<p><a href="Home.html" title="Retour à l'accueil !"> Retour à l'accueil </a></p>
+		<p><a href="../Home.html" title="Retour à l'accueil !"> Retour à l'accueil </a></p>
+		<p><a href="Immo_Parameters.html" title="Paramètres !"> Paramètres </a></p>
 
 	</body>
 </html>

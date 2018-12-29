@@ -1,0 +1,82 @@
+*
+{
+	font-family: Impact, "Arial Black", Arial, Verdana;
+}
+
+body
+{
+	background-color: #F5F5DC;
+}
+
+
+a:hover
+{
+	color:green;
+}
+
+a:active
+{
+	color:grey;
+}
+
+a:visited
+{
+	color:grey;
+}
+
+p:hover
+{
+	border-left: 3px solid black;
+}
+
+a:focus
+{
+	background-color: #F5F5DC;
+}
+
+h1, h2 /* les titres */
+{
+	text-align: center;
+	color: blue;
+	font -weight: bold; 
+	font-size:1.5em;
+	opacity:0.8;
+}
+
+em
+{
+	color: green;
+}
+
+strong
+{
+	color: green;
+	font-style: italic;
+}
+
+p
+{
+	padding: 3px; /* marge interieure */
+	margin: 2px 2px 2px 2px; /* marge exterieur, suit aiguille montre */
+}
+
+#infos_perso
+{
+	border: 3px blue solid;
+}
+
+.border
+{
+	border: 3px blue solid;
+}
+
+
+.param
+{
+	color:blue;
+}
+
+#main_link
+{
+	color : red;
+}
